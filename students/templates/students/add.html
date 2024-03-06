@@ -1,25 +1,25 @@
 {% extends "students/base.html" %}
 
 {% block body %}
-  <h3 class="text-center m-4">Add Student</h3>
+  <h3 class="text-center m-4">Студентті қосу</h3>
   {% if success %}
     <div class="alert alert-success" role="alert">
-      The new student added successfully.
-      <a href="{% url 'index' %}" class="alert-link">Go to Home Page.</a>
+        Жаңа студент сәтті қосылды.
+      <a href="{% url 'index' %}" class="alert-link">Басты бетке.</a>
     </div>
   {% else %}
     <div class="row justify-content-center">
       <div class="col-6">
         <div class="card bg-light mb-3">
           <div class="card-header">
-            <i class="fa-solid fa-address-card fa-lg"></i> Student Registration
+            <i class="fa-solid fa-address-card fa-lg"></i> Студентті Тіркеу
           </div>
           <div class="card-body">
             <form action="{% url 'add' %}" method="POST">
               {% csrf_token %}
               {{ form.as_p }}
-              <button type="submit" class="btn btn-primary">Add</button>
-              <a href="{% url 'index' %}" class="btn btn-secondary">Cancel</a>
+              <button type="submit" class="btn btn-primary">Тіркеу</button>
+              <a href="{% url 'index' %}" class="btn btn-secondary">Бас тарту</a>
             </form>
           </div>
         </div>
